@@ -1,0 +1,137 @@
+:root {
+  --fundo: #f5f6f8;
+  --cartao: #ffffff;
+  --texto: #1f2933;
+  --suave: #616e7c;
+  --borda: #d9dee4;
+  --primaria: #1f4e78;
+  --primaria-escura: #163a59;
+  --ok: #1e7b45;
+  --ok-fundo: #e3f4ea;
+  --erro: #b42318;
+  --erro-fundo: #fdecea;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 24px;
+  background: var(--primaria);
+  color: #fff;
+}
+.topo h1 { margin: 0; font-size: 1.3rem; }
+.topo nav { display: flex; gap: 4px; }
+.topo nav a {
+  color: #dbe7f3;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.topo nav a.active { background: rgba(255, 255, 255, 0.18); color: #fff; font-weight: 600; }
+
+main { max-width: 1150px; margin: 0 auto; padding: 16px 24px 48px; }
+h2 { margin: 8px 0 16px; }
+h3 { margin: 0 0 12px; font-size: 1.05rem; }
+
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.titulo-cartao { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+
+.formulario { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.formulario h3 { width: 100%; }
+.formulario label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--suave); flex: 1 1 200px; }
+.formulario label.curto { flex: 0 1 110px; }
+.dica { width: 100%; margin: 0; font-size: 0.8rem; color: var(--suave); }
+
+input, select {
+  font: inherit;
+  color: var(--texto);
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+input:disabled { background: #eef0f3; }
+
+button {
+  font: inherit;
+  padding: 8px 14px;
+  border: 1px solid var(--primaria);
+  border-radius: 6px;
+  background: var(--primaria);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: var(--primaria-escura); }
+button.secundario { background: #fff; color: var(--primaria); }
+button.secundario:hover { background: #eef3f8; }
+button.perigo { background: #fff; color: var(--erro); border-color: var(--erro); }
+button.perigo:hover { background: var(--erro-fundo); }
+button.link { background: none; border: none; color: var(--erro); padding: 0 6px; text-decoration: underline; font-size: 0.85rem; }
+button.fechar { background: none; border: none; color: inherit; font-size: 1.3rem; padding: 0 4px; line-height: 1; }
+
+.barra { margin: 8px 0; font-size: 0.9rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+}
+th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--borda); vertical-align: middle; }
+th { background: #eef1f5; font-weight: 600; font-size: 0.85rem; }
+tr.atrasado td { background: #fff7f6; }
+tr.selecionado td { background: #eef3f8; }
+td.acoes { white-space: nowrap; }
+td.acoes button { margin-right: 6px; padding: 5px 10px; font-size: 0.85rem; }
+.vazio { color: var(--suave); text-align: center; }
+
+.codigo { font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; color: var(--suave); }
+.etiqueta {
+  display: inline-block;
+  margin: 0 4px 2px 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: #e8edf3;
+  color: var(--primaria);
+}
+.etiqueta.ok { background: var(--ok-fundo); color: var(--ok); }
+.etiqueta.erro { background: var(--erro-fundo); color: var(--erro); }
+
+.lista { margin: 12px 0 0; padding-left: 18px; line-height: 1.9; }
+
+.aviso {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.aviso ul { margin: 6px 0 0; padding-left: 18px; }
+.aviso.sucesso { background: var(--ok-fundo); color: var(--ok); }
+.aviso.erro { background: var(--erro-fundo); color: var(--erro); }
+
+@media (max-width: 760px) {
+  main { padding: 12px 16px 32px; }
+  table { display: block; overflow-x: auto; }
+}
