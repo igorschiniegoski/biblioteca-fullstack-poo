@@ -139,6 +139,34 @@ conexão, preencher o `PreparedStatement` e converter cada linha do `ResultSet` 
 
 ## Como executar
 
+### Jeito rápido no Windows (um clique)
+
+1. Instale os programas (uma vez só), no PowerShell ou no Prompt de Comando:
+
+   ```powershell
+   winget install EclipseAdoptium.Temurin.26.JDK
+   winget install OpenJS.NodeJS.LTS
+   winget install Oracle.MySQL
+   winget install Git.Git
+   ```
+
+   Feche e abra o terminal depois de instalar. O Maven **não** precisa ser instalado: o projeto usa o Maven Wrapper (`backend/mvnw.cmd`).
+
+2. Baixe o projeto:
+
+   ```powershell
+   git clone https://github.com/igorschiniegoski/biblioteca-fullstack-poo.git
+   ```
+
+   Ou, no GitHub, use **Code → Download ZIP** e extraia.
+
+3. Dê dois cliques em **`scripts\windows\iniciar.bat`**. O script:
+   - cria um MySQL próprio do projeto na **porta 3307**, sem senha de root e com os dados em `%USERPROFILE%\biblioteca-mysql`, sem interferir em outro MySQL ou XAMPP que já esteja instalado;
+   - executa o `schema.sql` e o `dados-iniciais.sql`, recriando os dados de exemplo a cada execução;
+   - abre o backend e o frontend em duas janelas e o navegador em http://localhost:5173.
+
+   Na primeira vez, ele baixa o Maven e as dependências e pode levar alguns minutos. Use **`scripts\windows\parar.bat`** para desligar tudo.
+
 ### Pré-requisitos
 
 - JDK 26 e Maven 3.9+
