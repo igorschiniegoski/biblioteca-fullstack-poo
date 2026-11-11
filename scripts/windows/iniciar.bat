@@ -66,7 +66,7 @@ if errorlevel 1 goto erro
 echo === 3/4 Backend - Spring Boot, porta 8080 ===
 set "DB_URL=jdbc:mysql://127.0.0.1:%PORTA_DB%/biblioteca?serverTimezone=America/Sao_Paulo"
 set "PATH=%JAVA_HOME%\bin;%PATH%"
-start "Backend - nao feche" /d "%RAIZ%\backend" cmd /k .mvnw.cmd spring-boot:run
+start "Backend - nao feche" /d "%RAIZ%\backend" cmd /k .\mvnw.cmd spring-boot:run
 
 echo === 4/4 Frontend - React, porta 5173 ===
 if not exist "%RAIZ%\frontend\node_modules" (
